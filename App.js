@@ -4,35 +4,33 @@ import {
   StyleSheet,
   TouchableOpacity,
   Text,
-  View,
-  Button
+  View
 } from 'react-native';
+import codePush from 'react-native-code-push';
 
 export default class App extends Component {
-  /*constructor(props) {
-    super(props)
-    this.state = { count: 0 }
-  }
 
-  onPress = () => {
-    this.setState({
-      count: this.state.count+1
-    })
-  }*/
+  constructor(props) {
+    super(props);
+  }
+   updateDevEnv() {
+    codePush.sync({
+      updateDialog: true,
+      installMode: codePush.InstallMode.IMMEDIATE,
+      deploymentKey: 'miNywvdXHeMwPtyrWC8zkSkKkIBlHk3B-Ks2z'
+    });
+  }
 
  render() {
    return (
      <View style={styles.container}>
-       <TouchableOpacity
-         style={styles.button}
-         //onPress={this.onPress}
-       >
+       <TouchableOpacity onPress={this.updateDevEnv}
+         style={styles.button}>
          <Text> Connect To Dev </Text>
-       </TouchableOpacity>
+       </TouchableOpacity >
        <View>
        <TouchableOpacity
          style={styles.button}
-         //onPress={this.onPress}
        >
          <Text> Connect To SIT </Text>
        </TouchableOpacity>
@@ -40,7 +38,6 @@ export default class App extends Component {
        <View>
        <TouchableOpacity
          style={styles.button}
-         //onPress={this.onPress}
        >
          <Text> Connect To UAT </Text>
        </TouchableOpacity>
@@ -48,7 +45,6 @@ export default class App extends Component {
        <View>
        <TouchableOpacity
          style={styles.button}
-         //onPress={this.onPress}
        >
          <Text> Connect To Prod </Text>
        </TouchableOpacity>
@@ -73,4 +69,4 @@ const styles = StyleSheet.create({
   }
 })
 
-AppRegistry.registerComponent('App', () => App)
+AppRegistry.registerComponent('App', () => App);
