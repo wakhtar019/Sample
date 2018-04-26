@@ -25,7 +25,7 @@ let codePushOptions = {
     codePush.sync({      
       updateDialog: true,
       installMode: codePush.InstallMode.IMMEDIATE,
-      deploymentKey: "miNywvdXHeMwPtyrWC8zkSkKkIBlHk3B-Ks2z"
+      //deploymentKey: "miNywvdXHeMwPtyrWC8zkSkKkIBlHk3B-Ks2z"
     }, (status) => {
       for(var key in codePush.SyncStatus){
         if(status === codePush.SyncStatus[key]){
@@ -65,7 +65,7 @@ let codePushOptions = {
  render() {
    return (
      <View style={styles.container}>
-     <Text style={styles.codePush}>Code push Demo Update</Text>
+     <Text style={styles.codePush}>Code push Demo Update agian</Text>
        <TouchableOpacity onPress={ () => this.updateDevEnv() }
          style={styles.button}>
          <Text> Connect To Dev </Text>
@@ -118,4 +118,4 @@ const styles = StyleSheet.create({
 })
 App = codePush(codePushOptions)(App);
 export default App;
-AppRegistry.registerComponent("App", () => App);
+
