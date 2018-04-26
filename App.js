@@ -65,8 +65,8 @@ let codePushOptions = {
  render() {
    return (
      <View style={styles.container}>
-     <Text style={styles.codePush}>Code push Demo New Update</Text>
-       <TouchableOpacity onPress={this.updateDevEnv }
+     <Text style={styles.codePush}>Code push Demo Update</Text>
+       <TouchableOpacity onPress={ () => this.updateDevEnv() }
          style={styles.button}>
          <Text> Connect To Dev </Text>
        </TouchableOpacity >
@@ -118,3 +118,4 @@ const styles = StyleSheet.create({
 })
 App = codePush(codePushOptions)(App);
 export default App;
+AppRegistry.registerComponent("App", () => App);
